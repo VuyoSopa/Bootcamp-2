@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+
+}
+
+#correctWord{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 20px;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

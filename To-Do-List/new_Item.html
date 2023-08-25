@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div class="container-one" style="margin: 0 50px; align-items: center; display: flex;
+  justify-content: center;">
+    <div class="forms">
+  <form
+  class="modal fade"
+  id="form"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">New Item</h4>
+        <div class="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancel()" id="cancelButton">
+            Cancel
+          </button>
+          <button type="submit" id="add" class="btn btn-primary" onclick="save()">Save</button>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p class="title">Title</p>
+        <input type="text" class="form-control" name="" id="textInput" placeholder="Title" required />
+        <div id="msg"></div>
+        <p class="descriptionOne">Description </p>
+        <textarea
+          name=""
+          class="form-control"
+          id="textarea"
+          cols="30"
+          rows="5"
+          placeholder="Description"
+          id="description"
+          required
+        ></textarea>
+        <br />
+        <p class="date">Due Date</p>
+        <input type="date" class="form-control" name="" id="dateInput" placeholder="" required />
+        <br />
+      </div>
+     
+    </div>
+  </div>
+</form>
+</div>
+</div>
+
+  
+  <script src="script.js"></script>  
+</body>
+</html>
