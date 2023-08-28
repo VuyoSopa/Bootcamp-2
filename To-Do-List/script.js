@@ -122,7 +122,7 @@ function save() {
   data.push(new_cards)
   localStorage.setItem("user_data", JSON.stringify(data));
   loadData();
- } else if (textInput === '' || description ==='' || date === ''){
+ } else if (textInput === '' || textarea ==='' || dateInput === ''){
   return("Ensure you input a value")
 }
 
@@ -146,7 +146,7 @@ function edit(i) {
     data[i].date = dateInput;
     data[i].description = textarea;
   
-  
+    data.push(new_cards)
   localStorage.setItem("user_data", JSON.stringify(data));
   console.log(data)
 
@@ -203,7 +203,7 @@ function loadData(){
   <span class="material-symbols-outlined" id="view">
 visibility
 </span>
-<span class="material-symbols-outlined"id="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<span class="material-symbols-outlined" id="edit" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick= "edit()">
 edit
 </span>
 <span class="material-symbols-outlined" id="delete" onclick="deleteTask()">
@@ -216,8 +216,8 @@ edit
   
 </tr>
 <div>
-
-<div class="modal-body">
+<div class="modal"
+<div class="modal-body" id="editmodal">
 
 <div class="forms">
 <form
@@ -236,10 +236,11 @@ aria-hidden="true"
   ></button>
 </div>
 
+<div class="modal" id="editmodal">
 
 <div class="modal-body">
   <p class="title">Title</p>
-  <input type="text" class="form-control" id="textTwo_${i}" placeholder="Title" value="${data[i].textInput}"/>
+  <input type="text" class="form-control" id="textInput_${i}" placeholder="Title" value="${list[i].textInput}"/>
   <div id="msg"></div>
   <p class="descriptionTwo">Description</p>
   <textarea
@@ -249,11 +250,11 @@ aria-hidden="true"
     cols="30"
     rows="5"
     placeholder="Description"
-    id="descriptionTwo_${i}" value= "${data[i].textarea}"
+    id="textarea_${i}" value= "${list[i].description}"
   ></textarea>
   <br />
   <p class="dateTwo">Due Date</p>
-  <input type="date" class="form-control" name="" id="dateTwo_${i}" placeholder="" value="${data[i].date}"/>
+  <input type="date" class="form-control" name="" id="dateInput_${i}" placeholder="" value="${list[i].dateInput}"/>
   <br />
   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
   <button type="button" class="btn btn-primary">Save changes</button>
@@ -263,10 +264,11 @@ aria-hidden="true"
 </div>
 </form>
 </div>
+</div>
  
   ` 
 }
-// console.log(details)
+// console.log(data)
 // document.getElementById("list").innerHTML = details;
 
 } 
